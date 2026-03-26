@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react'
+import React, { Suspense, useState, useEffect } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls, Environment, ContactShadows, Sky } from '@react-three/drei'
@@ -95,7 +95,7 @@ const pokemonPositions = {
   Poliwag: new THREE.Vector3(5, 1.8, 9)
 };
 
-function CameraRig({ activePokemon }) {
+function CameraRig({ activePokemon, isMobile }) {
   const { camera, controls } = useThree()
 
   useFrame(() => {
@@ -114,10 +114,12 @@ function CameraRig({ activePokemon }) {
       // instead of hardcoding an absolute position
       const offset = new THREE.Vector3().subVectors(camera.position, controls.target)
 
-      // Smoothly zoom in to a distance of 10
-      offset.setLength(THREE.MathUtils.lerp(offset.length(), 10, step))
+      // Smoothly zoom in to a distance of 10 (further out for mobile)
+      const targetDist = isMobile ? 15 : 10
+      offset.setLength(THREE.MathUtils.lerp(offset.length(), targetDist, step))
       // Smoothly bring the camera down closer to eye level
-      offset.y = THREE.MathUtils.lerp(offset.y, 4, step)
+      const targetHeight = isMobile ? 6 : 4
+      offset.y = THREE.MathUtils.lerp(offset.y, targetHeight, step)
 
       camera.position.copy(controls.target).add(offset)
     } else {
@@ -126,10 +128,12 @@ function CameraRig({ activePokemon }) {
 
       const offset = new THREE.Vector3().subVectors(camera.position, controls.target)
 
-      // Smoothly zoom back out to a distance of 20
-      offset.setLength(THREE.MathUtils.lerp(offset.length(), 20, step))
+      // Smoothly zoom back out to a distance of 20 (further out for mobile)
+      const targetDist = isMobile ? 35 : 20
+      offset.setLength(THREE.MathUtils.lerp(offset.length(), targetDist, step))
       // Bring camera back up to sky view
-      offset.y = THREE.MathUtils.lerp(offset.y, 10, step)
+      const targetHeight = isMobile ? 15 : 10
+      offset.y = THREE.MathUtils.lerp(offset.y, targetHeight, step)
 
       camera.position.copy(controls.target).add(offset)
     }
@@ -140,10 +144,17 @@ function CameraRig({ activePokemon }) {
 
 export default function App() {
   const [activePokemon, setActivePokemon] = useState(null)
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <>
-      <Canvas camera={{ position: [0, 5, 20], fov: 50 }}>
+      <Canvas camera={{ position: isMobile ? [0, 8, 35] : [0, 5, 20], fov: 50 }}>
         {/* Lighting */}
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1.5} castShadow />
@@ -170,7 +181,7 @@ export default function App() {
 
         {/* Camera Controls */}
         <OrbitControls makeDefault autoRotate autoRotateSpeed={2.0} maxPolarAngle={Math.PI / 2 + 0.1} />
-        <CameraRig activePokemon={activePokemon} />
+        <CameraRig activePokemon={activePokemon} isMobile={isMobile} />
       </Canvas>
 
       {/* Intro Overlay */}

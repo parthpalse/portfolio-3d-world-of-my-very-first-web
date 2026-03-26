@@ -77,8 +77,8 @@ body, html {
   position: absolute;
   top: 20px;
   left: 20px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
   padding: 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -116,6 +116,9 @@ body, html {
     padding: 1rem;
     max-width: calc(100% - 20px);
     font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   }
   .intro-card h1 {
     font-size: 1.25rem;

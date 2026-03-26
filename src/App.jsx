@@ -191,11 +191,22 @@ export default function App() {
           <p style={{ color: '#555', marginBottom: '1rem', lineHeight: '1.4', marginTop: 0 }}>
             This is Parth Palse's website — a simple way to show my introduction in a creative format.
           </p>
-          <ul>
+          <ul style={{ marginBottom: '1rem' }}>
             <li>✨ Wait for the Pokémon to appear, or <strong>click them</strong> to explore.</li>
             <li>🖱️ <strong>Left-click + drag</strong> to rotate the camera.</li>
             <li>🤚 <strong>Right-click + drag</strong> to move around the world.</li>
             <li>🔍 <strong>Scroll</strong> to zoom in and out.</li>
+          </ul>
+          <p style={{ color: '#555', fontWeight: '600', marginBottom: '0.5rem', fontSize: '0.95rem' }}>
+            Looking for something? Each Pokémon knows a part of me.
+          </p>
+          <ul style={{ listStyleType: 'none', paddingLeft: 0, margin: 0, fontSize: '0.9rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.25rem' }}>
+            <li><strong>Pikachu</strong> = About</li>
+            <li><strong>Ponyta</strong> = Skills</li>
+            <li><strong>Bulbasaur</strong> = Projects</li>
+            <li><strong>Magikarp</strong> = Learning</li>
+            <li><strong>Jigglypuff</strong> = Experience</li>
+            <li><strong>Poliwag</strong> = Contact</li>
           </ul>
         </div>
       )}

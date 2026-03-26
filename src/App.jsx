@@ -192,10 +192,21 @@ export default function App() {
             This is Parth Palse's website — a simple way to show my introduction in a creative format.
           </p>
           <ul style={{ marginBottom: '1rem' }}>
-            <li>✨ Wait for the Pokémon to appear, or <strong>click them</strong> to explore.</li>
-            <li>🖱️ <strong>Left-click + drag</strong> to rotate the camera.</li>
-            <li>🤚 <strong>Right-click + drag</strong> to move around the world.</li>
-            <li>🔍 <strong>Scroll</strong> to zoom in and out.</li>
+            {isMobile ? (
+              <>
+                <li>✨ Wait for Pokémon to appear, or <strong>tap them</strong> to explore.</li>
+                <li>👆 <strong>1-finger drag</strong> to rotate the camera.</li>
+                <li>✌️ <strong>2-finger drag</strong> to move around the world.</li>
+                <li>🔍 <strong>Pinch</strong> to zoom in and out.</li>
+              </>
+            ) : (
+              <>
+                <li>✨ Wait for the Pokémon to appear, or <strong>click them</strong> to explore.</li>
+                <li>🖱️ <strong>Left-click + drag</strong> to rotate the camera.</li>
+                <li>🤚 <strong>Right-click + drag</strong> to move around the world.</li>
+                <li>🔍 <strong>Scroll</strong> to zoom in and out.</li>
+              </>
+            )}
           </ul>
           <p style={{ color: '#555', fontWeight: '600', marginBottom: '0.5rem', fontSize: '0.95rem' }}>
             Looking for something? Each Pokémon knows a part of me.

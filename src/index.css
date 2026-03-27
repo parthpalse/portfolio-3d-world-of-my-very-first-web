@@ -108,6 +108,33 @@ body, html {
   line-height: 1.4;
 }
 
+.toggle-instructions-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #ff5722;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.toggle-instructions-btn:hover {
+  background: #e64a19;
+}
+
+.toggle-instructions-btn.show-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: auto;
+  z-index: 5;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
 @media (max-width: 768px) {
   .intro-card {
     top: 10px;
@@ -127,5 +154,9 @@ body, html {
     margin: 10px;
     padding: 1.5rem;
     font-size: 0.9rem;
+  }
+  .toggle-instructions-btn.show-btn {
+    top: 10px;
+    left: 10px;
   }
 }

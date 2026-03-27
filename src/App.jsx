@@ -145,6 +145,7 @@ function CameraRig({ activePokemon, isMobile }) {
 export default function App() {
   const [activePokemon, setActivePokemon] = useState(null)
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+  const [showInstructions, setShowInstructions] = useState(true)
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768)
@@ -185,7 +186,7 @@ export default function App() {
       </Canvas>
 
       {/* Intro Overlay */}
-      {!activePokemon && (
+      {!activePokemon && showInstructions && (
         <div className="intro-card">
           <h1>Welcome!</h1>
           <p style={{ color: '#555', marginBottom: '1rem', lineHeight: '1.4', marginTop: 0 }}>
@@ -209,7 +210,7 @@ export default function App() {
             )}
           </ul>
           <p style={{ color: '#555', fontWeight: '600', marginBottom: '0.5rem', fontSize: '0.95rem' }}>
-            Looking for something? Each Pokémon knows a part of me.
+            Looking for something? Each Pokémon reveals a part of me — catch them all to explore.
           </p>
           <ul style={{ listStyleType: 'none', paddingLeft: 0, margin: 0, fontSize: '0.9rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.25rem' }}>
             <li><strong>Pikachu</strong> = About</li>
@@ -219,7 +220,23 @@ export default function App() {
             <li><strong>Jigglypuff</strong> = Experience</li>
             <li><strong>Poliwag</strong> = Contact</li>
           </ul>
+          <button 
+            onClick={() => setShowInstructions(false)} 
+            className="toggle-instructions-btn"
+          >
+            Hide Instructions
+          </button>
         </div>
+      )}
+
+      {/* Show Instructions Button when hidden */}
+      {!activePokemon && !showInstructions && (
+        <button 
+          onClick={() => setShowInstructions(true)} 
+          className="toggle-instructions-btn show-btn"
+        >
+          ℹ️ Show Instructions
+        </button>
       )}
 
       {/* UI Overlay Card */}

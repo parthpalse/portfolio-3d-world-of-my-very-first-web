@@ -14,7 +14,6 @@ const pokemonInfo = {
       <p style={{ margin: '0.2rem 0', fontWeight: 'bold' }}>B.Tech Electronics &amp; Computer Engineering (EXCP)</p>
       <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>K. J. Somaiya College of Engineering (2024–2028)</p>
       <p style={{ margin: '0.4rem 0 0.2rem', fontStyle: 'italic', fontSize: '0.9rem' }}>Honours in Quantum Computing &amp; Generative AI</p>
-      <p style={{ margin: '0.2rem 0', fontWeight: 'bold', fontSize: '0.9rem', color: '#4caf50' }}>CGPA: 7.0</p>
     </>
   ),
   Ponyta: (

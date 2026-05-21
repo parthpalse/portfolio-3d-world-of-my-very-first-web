@@ -12,9 +12,9 @@ const pokemonInfo = {
       </div>
       <h3 style={{ margin: '0 0 0.5rem 0', color: '#ff5722' }}>Parth Palse</h3>
       <p style={{ margin: '0.2rem 0', fontWeight: 'bold' }}>B.Tech Electronics &amp; Computer Engineering (EXCP)</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>K. J. Somaiya College of Engineering</p>
-      <p style={{ margin: '0.5rem 0 0.2rem', fontSize: '0.9rem' }}>Batch of 2028</p>
-      <p style={{ margin: '0.2rem 0', fontStyle: 'italic', fontSize: '0.9rem' }}>Honours in Quantum Computing &amp; Generative AI</p>
+      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>K. J. Somaiya College of Engineering (2024–2028)</p>
+      <p style={{ margin: '0.4rem 0 0.2rem', fontStyle: 'italic', fontSize: '0.9rem' }}>Honours in Quantum Computing &amp; Generative AI</p>
+      <p style={{ margin: '0.2rem 0', fontWeight: 'bold', fontSize: '0.9rem', color: '#4caf50' }}>CGPA: 7.0</p>
     </>
   ),
   Ponyta: (
@@ -23,13 +23,14 @@ const pokemonInfo = {
         Pokédex Entry — Ponyta — Skills in motion
       </div>
       <h3 style={{ margin: '0 0 0.5rem 0', color: '#ff5722' }}>Skills</h3>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>C, Python, Java, JavaScript</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>HTML, CSS, PHP, SQL</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>React.js, Node.js, Express.js</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>Flask, Three.js, Bootstrap</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>MongoDB, MySQL</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>Git, Netlify, Render</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>WebGL, REST APIs, ML Integration</p>
+      <div style={{ textAlign: 'left', fontSize: '0.85rem', lineHeight: '1.4' }}>
+        <p style={{ margin: '0.3rem 0' }}><strong>Languages:</strong> C, Python, Java, JavaScript, SQL, PHP</p>
+        <p style={{ margin: '0.3rem 0' }}><strong>Frontend:</strong> HTML, CSS, React.js, Bootstrap, Three.js, WebGL</p>
+        <p style={{ margin: '0.3rem 0' }}><strong>Backend:</strong> Node.js, Express.js, Flask, REST APIs</p>
+        <p style={{ margin: '0.3rem 0' }}><strong>Databases:</strong> MongoDB, MySQL, Supabase</p>
+        <p style={{ margin: '0.3rem 0' }}><strong>Tools &amp; Deploy:</strong> Git, Docker, Netlify, Render, Vercel</p>
+        <p style={{ margin: '0.3rem 0' }}><strong>Other Skills:</strong> ML Integration, Basic Video Editing, Basic Blender / 3D Modeling</p>
+      </div>
     </>
   ),
   Bulbasaur: (
@@ -38,11 +39,13 @@ const pokemonInfo = {
         Pokédex Entry — Bulbasaur — Growing through projects
       </div>
       <h3 style={{ margin: '0 0 0.5rem 0', color: '#ff5722' }}>Projects</h3>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}><strong>AlgoVerse</strong> — Algorithm Visualizer</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}><strong>ClgBuddy</strong> — Smart Commute Assistant</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}><strong>Car Dealership Management System</strong></p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}><strong>Smart Irrigation System</strong> (Arduino)</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}><strong>WBAN Research Work</strong></p>
+      <div style={{ textAlign: 'left', fontSize: '0.85rem', lineHeight: '1.4' }}>
+        <p style={{ margin: '0.3rem 0' }}><strong>AlgoVerse</strong> — Algorithm Visualizer</p>
+        <p style={{ margin: '0.3rem 0' }}><strong>ClgBuddy</strong> — Smart Commute Assistant</p>
+        <p style={{ margin: '0.3rem 0' }}><strong>Smart Irrigation System</strong> — Arduino-based</p>
+        <p style={{ margin: '0.3rem 0' }}><strong>Car Dealership Management System</strong></p>
+        <p style={{ margin: '0.3rem 0' }}><strong>Klarstone Website Development</strong> — Production project for Germany-based AI startup</p>
+      </div>
     </>
   ),
   Magicarp: (
@@ -51,11 +54,10 @@ const pokemonInfo = {
         Pokédex Entry — Magikarp — Work in progress
       </div>
       <h3 style={{ margin: '0 0 0.5rem 0', color: '#ff5722' }}>Currently Learning</h3>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>Data Structures &amp; Algorithms</p>
+      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>Data Structures &amp; Algorithms (LeetCode Practice)</p>
       <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>Advanced Web Development</p>
       <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>Machine Learning</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>Improving problem solving</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>Building better real-world systems</p>
+      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>Building Better Real-World Systems</p>
     </>
   ),
   Jigglypuff: (
@@ -64,11 +66,22 @@ const pokemonInfo = {
         Pokédex Entry — Jigglypuff — Work that speaks
       </div>
       <h3 style={{ margin: '0 0 0.5rem 0', color: '#ff5722' }}>Experience &amp; Achievements</h3>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>Web Developer Intern — GPROBO</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>Web Development Intern — KJSCE</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>Python for Data Science Certification</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>JPMorgan Software Engineering Simulation</p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}>Research Paper on 6G (WBAN)</p>
+      <div style={{ textAlign: 'left', fontSize: '0.85rem', lineHeight: '1.4' }}>
+        <p style={{ margin: '0.4rem 0 0.1rem 0' }}><strong>Full Stack Engineer Intern</strong> – <a href="https://klarstone.de" target="_blank" rel="noreferrer" style={{ color: '#ff5722', textDecoration: 'none', fontWeight: 'bold' }}>Klarstone</a> (Apr 2026 – Present)</p>
+        <ul style={{ margin: '0 0 0.4rem 0', paddingLeft: '1.2rem' }}>
+          <li style={{ marginBottom: '0.2rem' }}>Contributing to development of the official company website</li>
+          <li style={{ marginBottom: '0.2rem' }}>Working on frontend and backend development</li>
+          <li style={{ marginBottom: '0.2rem' }}>Implementing UI changes, responsiveness, and deployment workflows</li>
+        </ul>
+        
+        <p style={{ margin: '0.4rem 0 0.1rem 0' }}><strong>Web Developer Intern</strong> – GPROBO</p>
+        <p style={{ margin: '0.4rem 0 0.1rem 0' }}><strong>Web Development Intern</strong> – KJSCE</p>
+        
+        <hr style={{ border: 'none', borderTop: '1px solid #ccc', margin: '0.5rem 0' }} />
+        
+        <p style={{ margin: '0.3rem 0' }}>🏆 Python for Data Science Certification</p>
+        <p style={{ margin: '0.3rem 0' }}>🏆 JPMorgan Software Engineering Simulation</p>
+      </div>
     </>
   ),
   Poliwag: (

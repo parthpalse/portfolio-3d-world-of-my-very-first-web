@@ -94,7 +94,7 @@ const pokemonInfo = {
       <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}><strong>Email:</strong> <a href="mailto:parth.palse@somaiya.edu" style={{ color: '#ff5722', textDecoration: 'none' }}>parth.palse@somaiya.edu</a></p>
       <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}><strong>GitHub:</strong> <a href="https://github.com/parthpalse" target="_blank" rel="noreferrer" style={{ color: '#ff5722', textDecoration: 'none' }}>github.com/parthpalse</a></p>
       <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/parthpalse" target="_blank" rel="noreferrer" style={{ color: '#ff5722', textDecoration: 'none' }}>linkedin.com/in/parthpalse</a></p>
-      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}><strong>Portfolio:</strong> <a href="https://porthfoliorita.netlify.app" target="_blank" rel="noreferrer" style={{ color: '#ff5722', textDecoration: 'none' }}>porthfoliorita.netlify.app</a></p>
+      <p style={{ margin: '0.2rem 0', fontSize: '0.9rem' }}><strong>Portfolio:</strong> <a href="https://parthpalse.netlify.app" target="_blank" rel="noreferrer" style={{ color: '#ff5722', textDecoration: 'none' }}>parthpalse.netlify.app</a></p>
     </>
   )
 };

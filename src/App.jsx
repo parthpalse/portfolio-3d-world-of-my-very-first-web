@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useEffect } from 'react'
+import React, { Suspense, useState, useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls, Environment, ContactShadows, Sky } from '@react-three/drei'
@@ -158,6 +158,15 @@ export default function App() {
   const [activePokemon, setActivePokemon] = useState(null)
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
   const [showInstructions, setShowInstructions] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
+  const [isFadingOut, setIsFadingOut] = useState(false)
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 1.0 // 1.0x speed
+    }
+  }, [isLoading])
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768)
@@ -258,6 +267,29 @@ export default function App() {
             <div style={{ color: '#555', lineHeight: 1.5, margin: '1rem 0' }}>{pokemonInfo[activePokemon]}</div>
             <button onClick={() => setActivePokemon(null)}>Close</button>
           </div>
+        </div>
+      )}
+
+      {/* Loading Screen */}
+      {isLoading && (
+        <div className={`loading-screen ${isFadingOut ? 'fade-out' : ''}`}>
+          <video
+            ref={videoRef}
+            className="loading-video"
+            autoPlay
+            muted
+            playsInline
+            onEnded={() => {
+              setIsFadingOut(true);
+              setTimeout(() => setIsLoading(false), 1000);
+            }}
+          >
+            <source src="/loading.mp4" type="video/mp4" />
+          </video>
+          <button className="skip-btn" onClick={() => {
+            setIsFadingOut(true);
+            setTimeout(() => setIsLoading(false), 1000);
+          }}>Skip</button>
         </div>
       )}
     </>
